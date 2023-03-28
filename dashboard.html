@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+     body{
+    background: linear-gradient(45deg, rgba(245, 110, 250, 0.9) 0%, rgba(138, 88, 255, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background-size: cover
+        
+}
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-blueviolet bg-blueviolet"><a class="navbar-brand" href="#">
+    <img src="assets/img/Logo333.PNG"  style="border-radius: 40000px" alt="logo" class="img-responsive"/>
+    <div class="h-30"></div>
+   </a>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+</nav>
+  <div class="container my-4">
+    <h1 class="text-center mb-4">Dashboard </h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Ventas
+          </div>
+          <div class="card-body">
+            <p class="card-text">Aquí puedes ver las últimas ventas registradas y agregar nuevas ventas.</p>
+            <a href="#ventas" class="btn btn-primary">Ir a Ventas</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Agendamiento
+          </div>
+          <div class="card-body">
+            <p class="card-text">Agenda citas para tus clientes y mantén un control de tus próximas citas.</p>
+            <a href="http://127.0.0.1:5500/dashboard.html" class="btn btn-primary">Ir a Agendamiento</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Promociones
+          </div>
+          <div class="card-body">
+            <p class="card-text">Crea y gestiona tus promociones para aumentar tus ventas.</p>
+            <a href="#promociones" class="btn btn-primary">Ir a Promociones</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Sección de citas -->
+<div class="row my-4" id="ventas">
+  <div class="col-md-12">
+    <h2>Agendamiento</h2>
+    <div class="d-flex justify-content-between mb-3">
+      <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarVenta">Agregar Cita</button>
+      <input type="text" class="form-control w-25" placeholder="Buscar...">
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Servicio</th>
+          <th>Precio</th>
+          <th>Hora </th>
+          <th>Fecha </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Carolina Muñoz</td>
+          <td>Pedicura</td>
+          <td>$15000</td>
+          <td>8:00</td>
+          <td>27/03/2023</td>
+          <td>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalEditarVenta">Editar</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarVenta">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Andrea Rodrigez</td>
+          <td>Pedicura</td>
+          <td>$15000</td>
+          <td>11:00</td>
+          <td>25/03/2023</td>
+          <td>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalEditarVenta">Editar</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarVenta">Eliminar</button>
+          </td>
+        </tr>
+      </table>
+    
+   
+<!-- agregar cita -->
+
+
+
+<!-- Modal para editar venta -->
+<div class="modal fade" id="modalEditarVenta" tabindex="-1" aria-labelledby="modalEditarVentaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditarVentaLabel">Editar Venta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="producto">Producto</label>
+            <input type="text" class="form-control" id="producto" value="Laptop" required>
+          </div>
+          <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" value="2" required>
+          </div>
+          <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="number" class="form-control" id="precio" value="1500" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Sección de Ventas -->
+<div class="row my-4" id="ventas">
+    <div class="col-md-12">
+      <h2>Ventas</h2>
+      <div class="d-flex justify-content-between mb-3">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarVenta">Agregar Venta</button>
+        <input type="text" class="form-control w-25" placeholder="Buscar...">
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th>Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Sara Abril</td>
+            <td>Pedicura</td>
+            <td>$15000</td>
+            <td>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modalEditarVenta">Editar</button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarVenta">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Paula Castillo</td>
+            <td>Manicura</td>
+            <td>$12000</td>
+            <td>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modalEditarVenta">Editar</button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarVenta">Eliminar</button>
+            </td>
+          </tr>
+
+  
+  <!-- agregar venta -->
+  <div class="modal fade" id="modalAgregarVenta" tabindex="-1" aria-labelledby="modalAgregarVentaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAgregarVentaLabel">Agregar Venta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="producto">Producto</label>
+              <input type="text" class="form-control" id="producto" required>
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad</label>
+              <input type="number" class="form-control" id="cantidad" required>
+            </div>
+            <div class="form-group">
+              <label for="precio">Precio</label>
+              <input type="number" class="form-control" id="precio" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Modal para editar venta -->
+<div class="modal fade" id="modalEditarVenta" tabindex="-1" aria-labelledby="modalEditarVentaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarVentaLabel">Editar Venta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="producto">Producto</label>
+              <input type="text" class="form-control" id="producto" value="Laptop" required>
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad</label>
+              <input type="number" class="form-control" id="cantidad" value="2" required>
+            </div>
+            <div class="form-group">
+              <label for="precio">Precio</label>
+              <input type="number" class="form-control" id="precio" value="1500" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Tabla de promociones -->
+<table class="table">
+    <div class="row my-4" id="promociones">
+        <div class="col-md-12">
+          <h2>Promociones</h2>
+          <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarVenta">Agregar promociones</button>
+            <input type="text" class="form-control w-25" placeholder="Buscar...">
+          </div>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Descuento</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Dia de la Mujer</td>
+        <td>Descuento del 20% en todas las mujeres durante el dia de la mujer </td>
+        <td>20%</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarPromocion">Editar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Es tu dia de cumpleaños</td>
+        <td>Descuento del 30% en cualquier servicio que escojas en tu dia</td>
+        <td>30%</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarPromocion">Editar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Modal para agregar/editar promoción -->
+  <div class="modal fade" id="modalEditarPromocion" tabindex="-1" aria-labelledby="modalEditarPromocionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarPromocionLabel">Editar Promoción</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="nombre">Promocion</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="descuento">Descuento</label>
+              <input type="number" class="form-control" id="descuento" required>
+            </div>
+          </form>
+    <!-- Modal para editar venta -->
+<div class="modal fade" id="modalEditarVenta" tabindex="-1" aria-labelledby="modalEditarVentaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarVentaLabel">Editar Venta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="producto">Producto</label>
+              <input type="text" class="form-control" id="producto" value="Laptop" required>
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad</label>
+              <input type="number" class="form-control" id="cantidad" value="2" required>
+            </div>
+            <div class="form-group">
+              <label for="precio">Precio</label>
+              <input type="number" class="form-control" id="precio" value="1500" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>     
+</body>
